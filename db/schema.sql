@@ -8,7 +8,7 @@ USE employees;
 CREATE TABLE department(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(30)
-)
+);
 
 CREATE TABLE role(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -25,8 +25,8 @@ CREATE TABLE employee(
     last_name VARCHAR(30),
     role_id INT,
     INDEX role_ind (role_id),
-    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id)
+    CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id),
     manager_id INT,
     INDEX mgr_ind (manager_id),
     CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id)
-)
+);
